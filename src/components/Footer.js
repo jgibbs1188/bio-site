@@ -1,5 +1,8 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import styled from 'styled-components';
+import SignInButton from './SignInButton';
+import SignOutButton from './SignOutButton';
 
 const FooterStyle = styled.div`
   position: fixed;
@@ -11,14 +14,25 @@ const FooterStyle = styled.div`
   text-align: center;
 `;
 
-export default function Footer() {
+export default function Footer({ user }) {
   return (
     <FooterStyle>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="nav-link active navbar-brand" aria-current="page">
           FOOTER
         </div>
+        {user ? <SignOutButton /> : <SignInButton />}
       </nav>
     </FooterStyle>
   );
 }
+
+Footer.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+Footer.defaultProps = {
+  user: {},
+};

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import NewProjectForm from '../components/ProjectForm';
 import ProjectCard from '../components/ProjectCard';
 import { getProjects } from '../helpers/projectData';
 
-export default function Projects({ obj }) {
+export default function Projects({ user }) {
   const [project, setProject] = useState([]);
 
   useEffect(() => {
@@ -19,19 +19,19 @@ export default function Projects({ obj }) {
     };
   }, []);
 
-  const handleClick = (e) => {
-    if (e.target.id.includes('form-button')) {
-      <NewProjectForm obj={obj} />;
-    }
-  };
+  console.warn(user);
 
   return (
     <>
       <h1>Projects</h1>
       <div>
-        <button type="button" id="form-button" onClick={handleClick}>
-          Create a Project
-        </button>
+        {user ? (
+          <div />
+        ) : (
+          <Link className="linkStyling" to="/create">
+            Create a Project
+          </Link>
+        )}
       </div>
       {project.map((projects) => (
         <>
