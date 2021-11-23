@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import NewProjectForm from '../components/NewProjectForm';
+import NewProjectForm from '../components/ProjectForm';
 import ProjectCard from '../components/ProjectCard';
 import { getProjects } from '../helpers/projectData';
 

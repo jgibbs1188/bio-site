@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import Routes from '../routes';
 import 'firebase/auth';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function Initialize() {
   const [user, setUser] = useState(null);
@@ -27,6 +28,7 @@ function Initialize() {
     <div className="App">
       <Navbar user={user} />
       <Routes user={user} />
+      <Footer user={user} />
     </div>
   );
 }

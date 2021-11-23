@@ -9,7 +9,7 @@ const initialState = {
   firebaseKey: '',
 };
 
-function NewProjectForm({ obj = {} }) {
+function ProjectForm({ obj = {} }) {
   const [formInput, setFormInput] = useState(initialState);
 
   useEffect(() => {
@@ -87,8 +87,8 @@ function NewProjectForm({ obj = {} }) {
   );
 }
 
-NewProjectForm.propTypes = {
+ProjectForm.propTypes = {
   obj: PropTypes.shape({}),
 }.isRequired;
 
-export default NewProjectForm;
+export default ProjectForm;
