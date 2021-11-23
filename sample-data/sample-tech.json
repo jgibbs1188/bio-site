@@ -2,21 +2,25 @@
     "22222" : {
         "id": "aaaaa",
         "name": "Tech 1",
-        "description": "This is Tech 1 Description."
+        "description": "This is Tech 1 Description.",
+        "firebaseKey": "22222"
     },
     "33333" : {
         "id": "bbbbb",
         "name": "Tech 2",
-        "description": "This is Tech 2 Description."
+        "description": "This is Tech 2 Description.",
+        "firebaseKey": "33333"
     },
     "44444" : {
         "id": "ccccc",
         "name": "Tech 3",
-        "description": "This is Tech 3 Description."
+        "description": "This is Tech 3 Description.",
+        "firebaseKey": "44444"
     },
     "55555" : {
         "id": "ddddd",
         "name": "Tech 4",
-        "description": "This is Tech 4 Description."
+        "description": "This is Tech 4 Description.",
+        "firebaseKey": "55555"
     }
 }

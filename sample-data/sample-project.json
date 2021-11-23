@@ -2,21 +2,25 @@
     "12345" : {
         "id": "abc123",
         "name": "Project 1",
-        "description": "This is Project 1 Description."
+        "description": "This is Project 1 Description.",
+        "firebaseKey": "12345"
     },
     "67890" : {
         "id": "def456",
         "name": "Project 2",
-        "description": "This is Project 2 Description."
+        "description": "This is Project 2 Description.",
+        "firebaseKey": "67890"
     },
     "45678" : {
         "id": "ghi789",
         "name": "Project 3",
-        "description": "This is Project 3 Description."
+        "description": "This is Project 3 Description.",
+        "firebaseKey": "45678"
     },
     "12390" : {
         "id": "jkl012",
         "name": "Project 4",
-        "description": "This is Project 4 Description."
+        "description": "This is Project 4 Description.",
+        "firebaseKey": "12390"
     }
 }
