@@ -10,18 +10,6 @@ const getProjects = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// const createProject = (obj) => new Promise((resolve, reject) => {
-//   axios
-//     .post(`${dbURL}/projects.json`, obj)
-//     .then((response) => {
-//       const firebaseKey = response.data.name;
-//       axios
-//         .patch(`${dbURL}/projects/${firebaseKey}.json`, { firebaseKey })
-//         .then(() => getProjects().then(resolve));
-//     })
-//     .catch(reject);
-// });
-
 const createProject = (obj) => new Promise((resolve, reject) => {
   axios
     .post(`${dbURL}/projects.json`, obj)
