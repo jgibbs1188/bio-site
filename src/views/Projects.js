@@ -33,12 +33,7 @@ export default function Projects({ user }) {
       </div>
       {project.map((projects) => (
         <>
-          <ProjectCard
-            projects={projects}
-            key={projects.firebaseKey}
-            // Receiving an error for unique keys because the form and the card are on the same page and the form doesn't have a unique key.
-            // Will need to move the form to its own page/view probably
-          />
+          <ProjectCard key={projects.firebaseKey} projects={projects} />
         </>
       ))}
     </>
