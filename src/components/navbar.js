@@ -4,25 +4,46 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <div>
-      <>
-        <div>
-          <Link className="linkStyling" to="/home">
-            HOME
-          </Link>
-          <Link className="linkStyling" to="/projects">
-            PROJECTS
-          </Link>
-          <Link className="linkStyling" to="/tech">
-            TECH
-          </Link>
-          <Link className="linkStyling" to="/about">
-            ABOUT ME
-          </Link>
-          <Link className="linkStyling" to="/contact">
-            CONTACT
-          </Link>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <h2 className="navbar-brand">Joe Gibbs</h2>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/projects"
+              >
+                PROJECTS
+              </Link>
+              <Link className="nav-link active" aria-current="page" to="/tech">
+                TECH
+              </Link>
+              <Link className="nav-link active" aria-current="page" to="/about">
+                ABOUT ME
+              </Link>
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/contact"
+              >
+                CONTACT
+              </Link>
+            </div>
+          </div>
         </div>
-      </>
+      </nav>
     </div>
   );
 }
