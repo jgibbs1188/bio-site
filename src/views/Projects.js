@@ -33,7 +33,11 @@ export default function Projects({ user }) {
       </div>
       {project.map((projects) => (
         <>
-          <ProjectCard key={projects.firebaseKey} projects={projects} />
+          <ProjectCard
+            key={projects.firebaseKey}
+            projects={projects}
+            user={user}
+          />
         </>
       ))}
     </>

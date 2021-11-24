@@ -12,18 +12,25 @@ const ProjectCardStyle = styled.div`
   flex-direction: row;
 `;
 
-export default function ProjectCard({ projects, setProject }) {
+export default function ProjectCard({ user, projects, setProject }) {
   return (
     <ProjectCardStyle className="card">
       <div className="card-body">
         <div className="card-text">Name: {projects.name}</div>
         <div className="card-text">Description: {projects.description}</div>
       </div>
-      <DeleteButton
-        firebaseKey={projects.firebaseKey}
-        setProject={setProject}
-      />
-      <EditButton firebaseKey={projects.firebaseKey} />
+      {user ? (
+        <>
+          <DeleteButton
+            firebaseKey={projects.firebaseKey}
+            setProject={setProject}
+            user={user}
+          />
+          <EditButton firebaseKey={projects.firebaseKey} />
+        </>
+      ) : (
+        <div />
+      )}
     </ProjectCardStyle>
   );
 }
@@ -40,4 +47,14 @@ ProjectCard.propTypes = {
 ProjectCard.defaultProps = {
   projects: {},
   setProject: () => {},
+};
+
+ProjectCard.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+ProjectCard.defaultProps = {
+  user: {},
 };

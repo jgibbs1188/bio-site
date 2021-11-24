@@ -13,7 +13,7 @@ export default function DeleteButton({ firebaseKey, setProject }) {
       onClick={() => {
         deleteProject(firebaseKey).then((projects) => {
           setProject(projects);
-          history.push('/projects');
+          history.go(0);
         });
       }}
     >
