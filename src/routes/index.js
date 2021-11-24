@@ -4,10 +4,9 @@ import AdminRoutes from './AdminRoutes';
 import PublicRoutes from './PublicRoutes';
 
 export default function Routes({ user }) {
-  console.warn(user);
   return (
     <>
-      {user?.isAdmin && <AdminRoutes />}
+      {user?.isAdmin && <AdminRoutes user={user} />}
       <PublicRoutes user={user} />
     </>
   );

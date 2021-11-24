@@ -7,12 +7,14 @@ import Tech from '../views/Tech';
 import About from '../views/About';
 
 function PublicRoutes({ user }) {
-  console.warn(user);
-
   return (
     <Switch>
       <Route exact path="/about" component={About} />
-      <Route exact path="/projects" component={Projects} />
+      <Route
+        exact
+        path="/projects"
+        component={() => <Projects user={user} />}
+      />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/tech" component={Tech} />
       <Route

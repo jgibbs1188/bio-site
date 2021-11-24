@@ -19,18 +19,16 @@ export default function Projects({ user }) {
     };
   }, []);
 
-  console.warn(user);
-
   return (
     <>
       <h1>Projects</h1>
       <div>
         {user ? (
-          <div />
-        ) : (
           <Link className="linkStyling" to="/create">
             Create a Project
           </Link>
+        ) : (
+          <div />
         )}
       </div>
       {project.map((projects) => (
