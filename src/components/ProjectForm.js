@@ -7,6 +7,8 @@ const initialState = {
   name: '',
   description: '',
   firebaseKey: '',
+  githubLink: '',
+  netlifyLink: '',
 };
 
 function ProjectForm({ obj = {} }) {
@@ -17,7 +19,9 @@ function ProjectForm({ obj = {} }) {
       setFormInput({
         name: obj.name,
         description: obj.description,
+        githubLink: obj.githubLink,
         firebaseKey: obj.firebaseKey,
+        netlifyLink: obj.netlifyLink,
       });
     }
   }, [obj]);
@@ -72,6 +76,26 @@ function ProjectForm({ obj = {} }) {
               className="form-control"
               onChange={handleChange}
               id="description"
+            />
+          </label>
+          <label htmlFor="description" className="form-label">
+            Github Link
+            <input
+              type="text"
+              value={formInput.githubLink || ''}
+              className="form-control"
+              onChange={handleChange}
+              id="githubLink"
+            />
+          </label>
+          <label htmlFor="description" className="form-label">
+            Netlify
+            <input
+              type="text"
+              value={formInput.netlifyLink || ''}
+              className="form-control"
+              onChange={handleChange}
+              id="netlifyLink"
             />
           </label>
         </div>

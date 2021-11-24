@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import styled from 'styled-components';
 import DeleteButton from './DeleteButton';
 import EditButton from './EditButton';
 
-const ProjectCardStyle = styled.div`
+export const ProjectCardStyle = styled.div`
   width: 18rem;
   margin: 8px;
   display: flex;
@@ -12,12 +13,15 @@ const ProjectCardStyle = styled.div`
   flex-direction: row;
 `;
 
-export default function ProjectCard({ user, projects, setProject }) {
+export function ProjectCard({ user, projects, setProject }) {
   return (
     <ProjectCardStyle className="card">
       <div className="card-body">
         <div className="card-text">Name: {projects.name}</div>
         <div className="card-text">Description: {projects.description}</div>
+        <div>
+          <Link to={`/projects/${projects.firebaseKey}`}>Details</Link>
+        </div>
       </div>
       {user ? (
         <>
@@ -41,20 +45,14 @@ ProjectCard.propTypes = {
     description: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
   setProject: PropTypes.func,
 };
 
 ProjectCard.defaultProps = {
   projects: {},
   setProject: () => {},
-};
-
-ProjectCard.propTypes = {
-  user: PropTypes.shape({
-    isAdmin: PropTypes.bool,
-  }),
-};
-
-ProjectCard.defaultProps = {
   user: {},
 };
