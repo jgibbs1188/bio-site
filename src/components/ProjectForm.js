@@ -15,15 +15,22 @@ function ProjectForm({ obj = {} }) {
   const [formInput, setFormInput] = useState(initialState);
 
   useEffect(() => {
-    if (obj.firebaseKey) {
-      setFormInput({
-        name: obj.name,
-        description: obj.description,
-        githubLink: obj.githubLink,
-        firebaseKey: obj.firebaseKey,
-        netlifyLink: obj.netlifyLink,
-      });
+    let isMounted = true;
+
+    if (isMounted) {
+      if (obj.firebaseKey) {
+        setFormInput({
+          name: obj.name,
+          description: obj.description,
+          githubLink: obj.githubLink,
+          firebaseKey: obj.firebaseKey,
+          netlifyLink: obj.netlifyLink,
+        });
+      }
     }
+    return () => {
+      isMounted = false;
+    };
   }, [obj]);
 
   const history = useHistory();
