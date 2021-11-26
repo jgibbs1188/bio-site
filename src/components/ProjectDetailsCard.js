@@ -1,15 +1,12 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import EditButton from './EditButton';
 import { deleteProject } from '../helpers/projectData';
 import { ProjectCardStyle } from './ProjectCard';
 
 export default function ProjectDetailsCard({ user, projects }) {
   const { firebaseKey } = useParams();
   const history = useHistory();
-
-  console.warn(projects);
 
   const handleDelete = () => {
     deleteProject(firebaseKey);
@@ -32,7 +29,7 @@ export default function ProjectDetailsCard({ user, projects }) {
             onClick={handleDelete}
             label="delete"
           />
-          <EditButton firebaseKey={projects.firebaseKey} />
+          <Link to={`/edit/${projects.firebaseKey}`}>Edit</Link>
         </>
       ) : (
         <div />

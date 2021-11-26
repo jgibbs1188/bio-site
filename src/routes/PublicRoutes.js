@@ -10,14 +10,14 @@ import ProjectDetails from '../views/ProjectDetails';
 function PublicRoutes({ user }) {
   return (
     <Switch>
-      <Route exact path="/about" component={About} />
+      <Route exact path="/about" component={() => <About user={user} />} />
       <Route
         exact
         path="/projects"
         component={() => <Projects user={user} />}
       />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/tech" component={Tech} />
+      <Route exact path="/contact" component={() => <Contact user={user} />} />
+      <Route exact path="/tech" component={() => <Tech user={user} />} />
       <Route
         exact
         path="/projects/:firebaseKey"
