@@ -15,6 +15,7 @@ function Initialize() {
           fullName: authed.displayName,
           uid: authed.uid,
           isAdmin: process.env.REACT_APP_ADMIN_UID === authed.uid,
+          email: authed.email,
         };
         setUser(userInfoObj);
       } else if (user || user === null) {

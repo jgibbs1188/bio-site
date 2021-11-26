@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ProjectCard from '../components/ProjectCard';
+import { ProjectCard } from '../components/ProjectCard';
 import { getProjects } from '../helpers/projectData';
 
 export default function Projects({ user }) {
@@ -37,6 +37,7 @@ export default function Projects({ user }) {
             key={projects.firebaseKey}
             projects={projects}
             user={user}
+            // Getting the "each child in list must have unique key prop" error because my array of objects is getting mapped through twice for some reason. Need to fix.
           />
         </>
       ))}
