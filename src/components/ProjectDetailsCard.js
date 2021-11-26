@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { deleteProject } from '../helpers/projectData';
 import { ProjectCardStyle } from './ProjectCard';
 
-export default function ProjectDetailsCard({ user, projects }) {
+export default function ProjectDetailsCard({ projects, user }) {
   const { firebaseKey } = useParams();
   const history = useHistory();
 
