@@ -5,7 +5,7 @@ import Contact from '../views/Contact';
 import Projects from '../views/Projects';
 import Tech from '../views/Tech';
 import About from '../views/About';
-import ProjectDetails from '../views/ProjectDetails';
+import ProjectDetailsCard from '../components/ProjectDetailsCard';
 
 function PublicRoutes({ user }) {
   return (
@@ -21,7 +21,7 @@ function PublicRoutes({ user }) {
       <Route
         exact
         path="/projects/:firebaseKey"
-        component={() => <ProjectDetails user={user} />}
+        component={() => <ProjectDetailsCard user={user} />}
       />
     </Switch>
   );

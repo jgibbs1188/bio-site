@@ -6,11 +6,15 @@ export default function About() {
   const AboutStyling = styled.div`
     margin: auto;
     width: 50%;
+    text-align: center;
+    border: 3px solid darkblue;
+    margin-top: 10px;
   `;
 
   const AboutTitle = styled.div`
     margin: auto;
     width: 50%;
+    text-align: center;
     border: 3px solid darkblue;
     padding: 10px;
   `;
@@ -24,6 +28,8 @@ export default function About() {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    border: 1px solid gray;
+    padding: 5px;
   `;
 
   return (
