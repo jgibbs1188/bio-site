@@ -1,15 +1,23 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import AdminRoutes from './AdminRoutes';
+import PublicRoutes from './PublicRoutes';
 
-export default function Routes() {
+export default function Routes({ user }) {
   return (
-    <Switch>
-      <Route exact path={['/', '/home']} />
-      <Route exact path="/projects" />
-      <Route exact path="/projects/:key" />
-      <Route exact path="/contact" />
-      <Route exact path="/tech/" />
-      <Route exact path="/about/" />
-    </Switch>
+    <>
+      {user?.isAdmin && <AdminRoutes />}
+      <PublicRoutes user={user} />
+    </>
   );
 }
+
+Routes.propTypes = {
+  user: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+  }),
+};
+
+Routes.defaultProps = {
+  user: {},
+};
