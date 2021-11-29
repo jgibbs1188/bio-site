@@ -2,10 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectDetailsCard from '../components/ProjectDetailsCard';
 
-export default function ProjectDetails({ user, projects }) {
+export default function ProjectDetails({ user, setProject, projects }) {
   return (
     <>
-      <ProjectDetailsCard user={user} projects={projects} />
+      <ProjectDetailsCard
+        user={user}
+        setProject={setProject}
+        projects={projects}
+      />
     </>
   );
 }
@@ -21,9 +25,11 @@ ProjectDetails.propTypes = {
   user: PropTypes.shape({
     isAdmin: PropTypes.bool,
   }),
+  setProject: PropTypes.func,
 };
 
 ProjectDetails.defaultProps = {
   projects: {},
+  setProject: () => {},
   user: {},
 };

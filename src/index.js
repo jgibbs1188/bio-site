@@ -11,11 +11,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Router>
       <Initialize />
-    </React.StrictMode>
-  </Router>,
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 
