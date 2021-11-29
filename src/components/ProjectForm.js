@@ -65,7 +65,7 @@ function ProjectForm({ obj = {} }) {
     <div>
       <form>
         <div className="mb-3">
-          <label htmlFor="name" className="form-label">
+          <label htmlFor="name" className="form-group">
             Project Name
             <input
               type="text"
@@ -75,17 +75,20 @@ function ProjectForm({ obj = {} }) {
               id="name"
             />
           </label>
-          <label htmlFor="description" className="form-label">
+          <br />
+          <label htmlFor="description" className="form-group">
             Project Description
-            <input
+            <textarea
+              rows="3"
               type="text"
               value={formInput.description || ''}
-              className="form-control"
+              className="form-control col-xs-3"
               onChange={handleChange}
               id="description"
             />
           </label>
-          <label htmlFor="description" className="form-label">
+          <br />
+          <label htmlFor="description" className="form-group">
             Github Link
             <input
               type="text"
@@ -95,7 +98,8 @@ function ProjectForm({ obj = {} }) {
               id="githubLink"
             />
           </label>
-          <label htmlFor="description" className="form-label">
+          <br />
+          <label htmlFor="description" className="form-group">
             Netlify
             <input
               type="text"
