@@ -16,7 +16,7 @@ export const ProjectCardStyle = styled.div`
   border: 2px solid darkblue;
 `;
 
-export function ProjectCard({ user, projects, setProject }) {
+export function TechCard({ user, projects, setProject }) {
   return (
     <ProjectCardContainer>
       <ProjectCardStyle className="card">
@@ -31,25 +31,11 @@ export function ProjectCard({ user, projects, setProject }) {
           </div>
           <div className="card-text">
             <strong>Github: </strong>
-            <a
-              href={projects.githubLink}
-              className="link-primary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {projects.githubLink}
-            </a>
+            {projects.githubLink}
           </div>
-          <div className="card-text">
+          <div type="url" className="card-text">
             <strong>Project Demo: </strong>
-            <a
-              href={projects.netlifyLink}
-              className="link-primary"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {projects.netlifyLink}
-            </a>
+            {projects.netlifyLink}
           </div>
           {/* <div>
             <Link to={`/projects/${projects.firebaseKey}`}>Details</Link>
@@ -72,7 +58,7 @@ export function ProjectCard({ user, projects, setProject }) {
   );
 }
 
-ProjectCard.propTypes = {
+TechCard.propTypes = {
   projects: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
@@ -86,7 +72,7 @@ ProjectCard.propTypes = {
   setProject: PropTypes.func,
 };
 
-ProjectCard.defaultProps = {
+TechCard.defaultProps = {
   projects: {},
   setProject: () => {},
   user: {},
