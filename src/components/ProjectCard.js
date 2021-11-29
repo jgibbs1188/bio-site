@@ -5,51 +5,56 @@ import styled from 'styled-components';
 import DeleteButton from './DeleteButton';
 import EditButton from './EditButton';
 
+const ProjectCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export const ProjectCardStyle = styled.div`
   width: 18rem;
   margin: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  border: 2px solid darkblue;
 `;
 
 export function ProjectCard({ user, projects, setProject }) {
   return (
-    <ProjectCardStyle className="card">
-      <div className="card-body">
-        <div className="card-text">
-          <strong>Name: </strong>
-          {projects.name}
+    <ProjectCardContainer>
+      <ProjectCardStyle className="card">
+        <div className="card-body">
+          <div className="card-text">
+            <strong>Name: </strong>
+            {projects.name}
+          </div>
+          <div className="card-text">
+            <strong>Description: </strong>
+            {projects.description}
+          </div>
+          <div className="card-text">
+            <strong>Github: </strong>
+            {projects.githubLink}
+          </div>
+          <div type="url" className="card-text">
+            <strong>Project Demo: </strong>
+            {projects.netlifyLink}
+          </div>
+          {/* <div>
+            <Link to={`/projects/${projects.firebaseKey}`}>Details</Link>
+          </div> */}
         </div>
-        <div className="card-text">
-          <strong>Description: </strong>
-          {projects.description}
-        </div>
-        <div className="card-text">
-          <strong>Github: </strong>
-          {projects.githubLink}
-        </div>
-        <div className="card-text">
-          <strong>Project Demo: </strong>
-          {projects.netlifyLink}
-        </div>
-        {/* <div>
-          <Link to={`/projects/${projects.firebaseKey}`}>Details</Link>
-        </div> */}
-      </div>
-      {user ? (
-        <>
-          <DeleteButton
-            firebaseKey={projects.firebaseKey}
-            setProject={setProject}
-            user={user}
-          />
-          <EditButton firebaseKey={projects.firebaseKey} />
-        </>
-      ) : (
-        <div />
-      )}
-    </ProjectCardStyle>
+        {user ? (
+          <>
+            <DeleteButton
+              firebaseKey={projects.firebaseKey}
+              setProject={setProject}
+              user={user}
+            />
+            <EditButton firebaseKey={projects.firebaseKey} />
+          </>
+        ) : (
+          <div />
+        )}
+      </ProjectCardStyle>
+    </ProjectCardContainer>
   );
 }
 

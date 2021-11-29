@@ -1,13 +1,18 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { deleteProject } from '../helpers/projectData';
 
 export default function DeleteButton({ firebaseKey, setProject }) {
   const history = useHistory();
 
+  const DeleteButtonStyling = styled.div`
+    margin: auto;
+  `;
+
   return (
-    <button
+    <DeleteButtonStyling
       type="button"
       className="btn-outline-dark btn"
       onClick={() => {
@@ -18,7 +23,7 @@ export default function DeleteButton({ firebaseKey, setProject }) {
       }}
     >
       <i className="fas fa-trash-alt" />
-    </button>
+    </DeleteButtonStyling>
   );
 }
 

@@ -21,7 +21,7 @@ export default function Tech() {
   console.warn(tech);
   return (
     <>
-      <h1>Projects</h1>
+      <h1>Tech Stack</h1>
       <div>
         {/* {user ? (
           <Link className="linkStyling" to="/create">
