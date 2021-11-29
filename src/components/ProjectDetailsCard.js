@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { deleteProject } from '../helpers/projectData';
+import { deleteProject, getSingleProject } from '../helpers/projectData';
 import { ProjectCardStyle } from './ProjectCard';
 
-export default function ProjectDetailsCard({ projects, user }) {
+export default function ProjectDetailsCard({ setProject, projects, user }) {
   const { firebaseKey } = useParams();
   const history = useHistory();
+
+  useEffect(() => {
+    let isMounted = true;
+    getSingleProject({ firebaseKey }).then((project) => {
+      if (isMounted) {
+        setProject(project);
+      }
+    });
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleDelete = () => {
     deleteProject(firebaseKey);
@@ -49,9 +61,11 @@ ProjectDetailsCard.propTypes = {
   user: PropTypes.shape({
     isAdmin: PropTypes.bool,
   }),
+  setProject: PropTypes.func,
 };
 
 ProjectDetailsCard.defaultProps = {
   projects: {},
+  setProject: () => {},
   user: {},
 };

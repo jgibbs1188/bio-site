@@ -32,14 +32,11 @@ export default function Projects({ user }) {
         )}
       </div>
       {project.map((projects) => (
-        <>
-          <ProjectCard
-            key={projects.firebaseKey}
-            projects={projects}
-            user={user}
-            // Getting the "each child in list must have unique key prop" error because my array of objects is getting mapped through twice for some reason. Need to fix.
-          />
-        </>
+        <ProjectCard
+          key={projects.firebaseKey}
+          projects={projects}
+          user={user}
+        />
       ))}
     </>
   );
