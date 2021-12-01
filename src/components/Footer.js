@@ -18,9 +18,7 @@ export default function Footer({ user }) {
   return (
     <FooterStyle>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="nav-link active navbar-brand" aria-current="page">
-          FOOTER
-        </div>
+        <div className="nav-link active navbar-brand" aria-current="page" />
         {user ? <SignOutButton /> : <SignInButton />}
       </nav>
     </FooterStyle>
